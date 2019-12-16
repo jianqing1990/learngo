@@ -1,8 +1,8 @@
-package main
+package testing
 
 type Retriever struct {
 }
 
-func main() {
-
+func (Retriever) Get(url string) string {
+	return "fake content"
 }

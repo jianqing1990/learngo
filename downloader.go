@@ -2,15 +2,17 @@ package main
 
 import (
 	"fmt"
-	"learngo/infra"
+	//	"learngo/infra"
+	"learngo/testing"
 )
 
-func getRetriever() infra.Retriever {
-	return infra.Retriever{}
+func getRetriever() testing.Retriever {
+	return testing.Retriever{}
 }
 
 func main() {
-	var retriever infra.Retriever = getRetriever()
+	var retriever testing.Retriever = getRetriever()
+
 	//	retriever := getRetriever()
 	fmt.Println(retriever.Get("https://www.imooc.com/"))
 }
