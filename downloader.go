@@ -2,11 +2,10 @@ package main
 
 import (
 	"fmt"
-	//	"learngo/infra"
 	"learngo/testing"
 )
 
-func getRetriever() testing.Retriever {
+func getRetriever() retriever {
 	return testing.Retriever{}
 }
 
