@@ -1,8 +1,9 @@
 package main
 
 import (
-	"fmt"
+	"learngo/test"
 	"learngo/testing"
+	"log"
 )
 
 func getRetriever() retriever {
@@ -16,9 +17,23 @@ type retriever interface {
 
 func main() {
 	//var retriever testing.Retriever = getRetriever()
-	var r retriever = getRetriever()
+	//var r retriever = getRetriever()
 	//	retriever := getRetriever()
 	//fmt.Println(retriever.Get("https://www.imooc.com/"))
-	fmt.Println(r.Get("https://www.imooc.com/"))
+	//fmt.Println(r.Get("https://www.imooc.com/"))
+
+	result := "sda"
+
+	for {
+
+		go func(i interface{}) {
+
+			test.Item() <- result
+			var sout func() chan interface{} = test.Item
+			item := <-sout
+			log.Printf("获取数据："+"%v", item)
+		}(result)
+
+	}
 
 }
