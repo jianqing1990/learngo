@@ -3,7 +3,6 @@ package main
 import (
 	"learngo/test"
 	"learngo/testing"
-	"log"
 )
 
 func getRetriever() retriever {
@@ -29,10 +28,9 @@ func main() {
 		go func(i interface{}) {
 
 			test.Item() <- result
-			var sout func() chan interface{} = test.Item
-			item := <-sout
-			log.Printf("获取数据："+"%v", item)
+
 		}(result)
+		//	var sout func() chan interface{} = test.Item
 
 	}
 
